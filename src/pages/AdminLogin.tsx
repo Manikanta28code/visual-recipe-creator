@@ -128,8 +128,14 @@ const AdminLogin = () => {
               </form>
             </Form>
 
-            <div className="mt-6 text-center">
-              <Link to="/" className="text-sm text-muted-foreground hover:underline">
+            <div className="mt-6 text-center space-y-2">
+              <p className="text-sm text-muted-foreground">
+                Need an admin account?{" "}
+                <Link to="/admin-signup" className="text-primary hover:underline">
+                  Request access
+                </Link>
+              </p>
+              <Link to="/" className="text-sm text-muted-foreground hover:underline block">
                 ← Back to homepage
               </Link>
             </div>

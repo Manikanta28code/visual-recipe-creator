@@ -129,6 +129,12 @@ const StudentLogin = () => {
 
             <div className="mt-6 text-center space-y-2">
               <p className="text-sm text-muted-foreground">
+                New student?{" "}
+                <Link to="/student-signup" className="text-primary hover:underline">
+                  Create account
+                </Link>
+              </p>
+              <p className="text-sm text-muted-foreground">
                 Forgot your password?{" "}
                 <Link to="/forgot-password" className="text-primary hover:underline">
                   Reset it here

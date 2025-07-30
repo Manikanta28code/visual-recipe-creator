@@ -128,8 +128,14 @@ const StaffLogin = () => {
               </form>
             </Form>
 
-            <div className="mt-6 text-center">
-              <Link to="/" className="text-sm text-muted-foreground hover:underline">
+            <div className="mt-6 text-center space-y-2">
+              <p className="text-sm text-muted-foreground">
+                New staff member?{" "}
+                <Link to="/staff-signup" className="text-primary hover:underline">
+                  Create account
+                </Link>
+              </p>
+              <Link to="/" className="text-sm text-muted-foreground hover:underline block">
                 ← Back to homepage
               </Link>
             </div>
