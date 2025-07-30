@@ -45,17 +45,23 @@ const Header = () => {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="sm" className="text-primary-foreground hover:bg-primary-light">
-              <User className="h-4 w-4 mr-2" />
-              Admin Login
+            <Button variant="ghost" size="sm" className="text-primary-foreground hover:bg-primary-light" asChild>
+              <NavLink to="/admin-login">
+                <User className="h-4 w-4 mr-2" />
+                Admin Login
+              </NavLink>
             </Button>
-            <Button variant="ghost" size="sm" className="text-primary-foreground hover:bg-primary-light">
-              <Users className="h-4 w-4 mr-2" />
-              Staff Login
+            <Button variant="ghost" size="sm" className="text-primary-foreground hover:bg-primary-light" asChild>
+              <NavLink to="/staff-login">
+                <Users className="h-4 w-4 mr-2" />
+                Staff Login
+              </NavLink>
             </Button>
-            <Button variant="ghost" size="sm" className="text-primary-foreground hover:bg-primary-light">
-              <User className="h-4 w-4 mr-2" />
-              Student Login
+            <Button variant="ghost" size="sm" className="text-primary-foreground hover:bg-primary-light" asChild>
+              <NavLink to="/student-login">
+                <User className="h-4 w-4 mr-2" />
+                Student Login
+              </NavLink>
             </Button>
           </div>
         </div>
