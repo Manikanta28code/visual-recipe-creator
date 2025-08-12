@@ -11,13 +11,13 @@ import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 
 const loginSchema = z.object({
-  studentId: z.string().min(1, "Student ID is required"),
+  parentId: z.string().min(1, "Parent ID is required"),
   password: z.string().min(6, "Password must be at least 6 characters"),
 });
 
 type LoginForm = z.infer<typeof loginSchema>;
 
-const StudentLogin = () => {
+const ParentLogin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
@@ -25,7 +25,7 @@ const StudentLogin = () => {
   const form = useForm<LoginForm>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
-      studentId: "",
+      parentId: "",
       password: "",
     },
   });
@@ -34,10 +34,10 @@ const StudentLogin = () => {
     setIsLoading(true);
     try {
       // TODO: Implement Supabase authentication
-      console.log("Student login attempt:", data);
+      console.log("Parent login attempt:", data);
       toast({
         title: "Login functionality",
-        description: "Authentication will be implemented with Supabase",
+        description: "Authentication will be implemented with supabase",
       });
     } catch (error) {
       toast({
@@ -63,7 +63,7 @@ const StudentLogin = () => {
 
         <Card>
           <CardHeader>
-            <CardTitle>Student Login</CardTitle>
+            <CardTitle>Parent Login</CardTitle>
             <CardDescription>
               Sign in to view your academic information and resources
             </CardDescription>
@@ -73,13 +73,13 @@ const StudentLogin = () => {
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                 <FormField
                   control={form.control}
-                  name="studentId"
+                  name="parentId"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Student ID</FormLabel>
+                      <FormLabel>Parent ID</FormLabel>
                       <FormControl>
                         <Input
-                          placeholder="Enter your student ID"
+                          placeholder="Enter your parent ID"
                           {...field}
                         />
                       </FormControl>
@@ -128,12 +128,12 @@ const StudentLogin = () => {
             </Form>
 
             <div className="mt-6 text-center space-y-2">
-              <p className="text-sm text-muted-foreground">
+              {/* <p className="text-sm text-muted-foreground">
                 New student?{" "}
                 <Link to="/student-signup" className="text-primary hover:underline">
                   Create account
                 </Link>
-              </p>
+              </p> */}
               <p className="text-sm text-muted-foreground">
                 Forgot your password?{" "}
                 <Link to="/forgot-password" className="text-primary hover:underline">
@@ -151,4 +151,4 @@ const StudentLogin = () => {
   );
 };
 
-export default StudentLogin;
+export default ParentLogin;

@@ -29,7 +29,7 @@ const Hero = () => {
             </h1>
             <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-2xl leading-relaxed">
               Nurturing young minds with quality education, values, and innovation at 
-              Sri Balaji Subrahmanveswara English Medium High School.
+              Sri Balaji Subrahmanyeswara English Medium High School.
             </p>
           </div>
 

@@ -9,7 +9,7 @@ import Admissions from "./pages/Admissions";
 import Fees from "./pages/Fees";
 import AdminLogin from "./pages/AdminLogin";
 import StaffLogin from "./pages/StaffLogin";
-import StudentLogin from "./pages/StudentLogin";
+import ParentLogin from "./pages/ParentLogin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,7 +27,7 @@ const App = () => (
           <Route path="/fees" element={<Fees />} />
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/staff-login" element={<StaffLogin />} />
-          <Route path="/student-login" element={<StudentLogin />} />
+          <Route path="/student-login" element={<ParentLogin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

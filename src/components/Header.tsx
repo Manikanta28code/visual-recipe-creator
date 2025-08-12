@@ -37,11 +37,11 @@ const Header = () => {
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4" />
-              <span>info@sribalajischool.edu.in</span>
+              <span>info@sribalajisubrahmanyeswara.edu.in</span>
             </div>
             <div className="flex items-center space-x-2">
               <MapPin className="h-4 w-4" />
-              <span>Hyderabad, Telangana</span>
+              <span>Srisailam Project, Andhra Pradesh</span>
             </div>
           </div>
           <div className="flex items-center space-x-4">
@@ -58,9 +58,9 @@ const Header = () => {
               </NavLink>
             </Button>
             <Button variant="ghost" size="sm" className="text-primary-foreground hover:bg-primary-light" asChild>
-              <NavLink to="/student-login">
+              <NavLink to="/parent-login">
                 <User className="h-4 w-4 mr-2" />
-                Student Login
+                Parent Login
               </NavLink>
             </Button>
           </div>
@@ -78,7 +78,7 @@ const Header = () => {
               </div>
               <div>
                 <h1 className="text-xl font-bold text-primary">
-                  Sri Balaji Subrahmanveswara
+                  Sri Balaji Subrahmanyeswara
                 </h1>
                 <p className="text-sm text-muted-foreground">English Medium High School</p>
               </div>
