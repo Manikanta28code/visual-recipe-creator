@@ -33,16 +33,27 @@ const AdminLogin = () => {
   const onSubmit = async (data: LoginForm) => {
     setIsLoading(true);
     try {
-      // TODO: Implement Supabase authentication
+      // For demo purposes, any valid email/password combination works
       console.log("Admin login attempt:", data);
-      toast({
-        title: "Login functionality",
-        description: "Authentication will be implemented with Supabase",
-      });
+      
+      // Simulate API call delay
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Simple validation for demo
+      if (data.email && data.password.length >= 6) {
+        toast({
+          title: "Login successful",
+          description: "Welcome to the admin dashboard!",
+        });
+        // Redirect to admin dashboard
+        window.location.href = "/admin-dashboard";
+      } else {
+        throw new Error("Invalid credentials");
+      }
     } catch (error) {
       toast({
         title: "Error",
-        description: "Login failed. Please try again.",
+        description: "Login failed. Please check your credentials.",
         variant: "destructive",
       });
     } finally {
