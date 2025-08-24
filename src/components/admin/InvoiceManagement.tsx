@@ -93,8 +93,11 @@ const InvoiceManagement = () => {
     } else {
       const newInvoice: Invoice = {
         id: `inv-${Date.now()}`,
-        ...data,
+        studentId: data.studentId,
         studentName: student.name,
+        academicYear: data.academicYear,
+        term: data.term,
+        dueDate: data.dueDate,
         totalAmount,
         paidAmount: 0,
         dueAmount: totalAmount,
