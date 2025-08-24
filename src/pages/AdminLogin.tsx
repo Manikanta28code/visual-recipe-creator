@@ -33,27 +33,45 @@ const AdminLogin = () => {
   const onSubmit = async (data: LoginForm) => {
     setIsLoading(true);
     try {
-      // For demo purposes, any valid email/password combination works
       console.log("Admin login attempt:", data);
       
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Simple validation for demo
-      if (data.email && data.password.length >= 6) {
+      // Call Spring Boot API
+      const response = await fetch('http://localhost:8080/api/admin/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: data.email,
+          password: data.password,
+        }),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log("Login successful:", result);
+        
+        // Store token if provided
+        if (result.token) {
+          localStorage.setItem('adminToken', result.token);
+        }
+        
         toast({
           title: "Login successful",
           description: "Welcome to the admin dashboard!",
         });
+        
         // Redirect to admin dashboard
         window.location.href = "/admin-dashboard";
       } else {
-        throw new Error("Invalid credentials");
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Login failed");
       }
     } catch (error) {
+      console.error("Login error:", error);
       toast({
         title: "Error",
-        description: "Login failed. Please check your credentials.",
+        description: error instanceof Error ? error.message : "Login failed. Please check your credentials.",
         variant: "destructive",
       });
     } finally {
