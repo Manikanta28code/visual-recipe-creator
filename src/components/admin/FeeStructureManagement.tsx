@@ -93,7 +93,9 @@ const FeeStructureManagement = () => {
     } else {
       const newStructure: FeeStructure = {
         id: `fee-struct-${Date.now()}`,
-        ...data,
+        academicYear: data.academicYear,
+        class: data.class,
+        term: data.term,
         isActive: true,
         createdDate: new Date().toISOString().split('T')[0],
         fees: data.fees.map((fee, index) => ({
