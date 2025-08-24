@@ -31,13 +31,6 @@ const AdminLogin = () => {
     },
   });
 
-<<<<<<< HEAD
- 
- 
-
-
-
-=======
   const onSubmit = async (data: LoginForm) => {
     setIsLoading(true);
     try {
@@ -86,7 +79,6 @@ const AdminLogin = () => {
       setIsLoading(false);
     }
   };
->>>>>>> 4897f11fee4127dbd814354445d43d96eafff9b6
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center p-4">
